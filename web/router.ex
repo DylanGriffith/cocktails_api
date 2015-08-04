@@ -13,13 +13,7 @@ defmodule CocktailsApi.Router do
   end
 
   scope "/", CocktailsApi do
-    pipe_through :browser # Use the default browser stack
-
-    get "/", PageController, :index
+    pipe_through :api
+    resources "/ingredients", IngredientController, only: [:index, :create, :show, :update, :delete]
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", CocktailsApi do
-  #   pipe_through :api
-  # end
 end
