@@ -10,6 +10,11 @@ defmodule CocktailsApi.IngredientView do
   end
 
   def render("ingredient.json", %{ingredient: ingredient}) do
-    %{id: ingredient.id}
+    %{
+      id: ingredient.id,
+      name: ingredient.name,
+      type: ingredient.type,
+      image_thumb_uri: ingredient.image_thumb_uri
+    }
   end
 end
