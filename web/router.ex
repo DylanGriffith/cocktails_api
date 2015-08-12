@@ -15,5 +15,6 @@ defmodule CocktailsApi.Router do
   scope "/", CocktailsApi do
     pipe_through :api
     resources "/ingredients", IngredientController, only: [:index, :create, :show, :update, :delete]
+    resources "/cocktails", CocktailController, only: [:index, :create, :show, :update, :delete]
   end
 end
