@@ -1,7 +1,11 @@
 defmodule CocktailsApi.Ingredient do
   use CocktailsApi.Web, :model
 
+  alias CocktailsApi.CocktailIngredient
+  alias CocktailsApi.Cocktail
+
   schema "ingredients" do
+    has_many :cocktail_ingredients, CocktailIngredient
     field :name, :string
     field :type, :string
     field :image_thumb_uri, :string
